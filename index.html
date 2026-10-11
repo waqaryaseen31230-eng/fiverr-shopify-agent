@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopify AI Agent - By Waqar</title>
+<style>
+body{font-family:Arial,sans-serif;background:#0a0a0a;color:white;margin:0;padding:20px;text-align:center}
+.container{max-width:700px;margin:30px auto;background:#1a1a1a;padding:30px;border-radius:20px;border:1px solid #333}
+h1{color:#00ff88;font-size:32px}
+.btn{background:#00ff88;color:black;padding:15px 30px;border-radius:10px;text-decoration:none;font-weight:bold;display:inline-block;margin:10px}
+.chatbox{background:#222;padding:20px;border-radius:15px;margin:20px 0;text-align:left;min-height:200px}
+.msg{background:#333;padding:10px;border-radius:10px;margin:8px 0}
+.user{background:#00ff88;color:black;margin-left:40px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🛍️ Shopify AI Shopping Agent</h1>
+<p>Your Intelligent AI Assistant for Shopify Stores</p>
+
+<div class="chatbox" id="chat">
+<div class="msg">🤖 Hi! I'm your Shopify AI Agent. Ask me about products, orders, or recommendations!</div>
+</div>
+
+<input type="text" id="input" placeholder="Ask about products..." style="width:70%;padding:12px;border-radius:8px;border:none">
+<button onclick="send()" class="btn" style="padding:12px 20px">Send</button>
+
+<br><br>
+<a href="https://www.fiverr.com/" class="btn">Order on Fiverr</a>
+<p style="margin-top:30px;color:#888">Developed by Waqar Yaseen | Powered by AI</p>
+</div>
+
+<script>
+function send(){
+let i=document.getElementById('input');
+let c=document.getElementById('chat');
+if(!i.value)return;
+c.innerHTML+=`<div class="msg user">${i.value}</div>`;
+setTimeout(()=>{
+c.innerHTML+=`<div class="msg">🤖 Great question about "${i.value}"! As a Shopify AI Agent, I can help customers find products, check inventory, and increase sales by 3x. Contact Waqar on Fiverr to add me to your store!</div>`;
+c.scrollTop=c.scrollHeight;
+},800);
+i.value='';
+}
+</script>
+</body>
+</html>
